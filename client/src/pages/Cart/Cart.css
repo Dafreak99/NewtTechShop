@@ -1,0 +1,136 @@
+.cart {
+  padding: 0 50px;
+  display: grid;
+  padding-top: 70px;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 100px;
+}
+.cartproduct {
+  grid-column: span 8;
+  margin-right: 50px;
+}
+.invoice {
+  grid-column: span 4;
+  padding: 50px;
+  background: #f9f9f9;
+}
+.cart #errorMessage {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #b5eeb5;
+  padding: 16px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #429a67;
+}
+.cartproduct tr {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.invoice > h4 {
+  margin-bottom: 15px;
+}
+.cartproduct tr td:nth-child(1) {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.emptycart {
+  padding-top: 100px;
+  text-align: center;
+  min-height: 500px;
+}
+.updatecart {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.emptycart h3 {
+  font-size: 3em;
+}
+.cartproduct tr th:nth-child(1) {
+  grid-column: span 4;
+}
+.cartproduct tr th {
+  grid-column: span 2;
+  padding: 10px 20px;
+}
+.cartproduct tr td {
+  grid-column: span 2;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.cartproduct .field {
+  border-bottom: 1px solid #f0f0f0;
+}
+tr.content {
+  min-height: 100px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.content img {
+  max-width: 80px;
+}
+
+tr.content input[type="number"] {
+  width: 60%;
+  height: 50%;
+  outline: none;
+}
+
+.shipping {
+  position: relative;
+  height: 50px;
+  margin-top: 20px;
+}
+.shipping a {
+  width: 100%;
+  position: absolute;
+  color: white;
+  background: #4859f7;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.cartproduct .content a {
+  color: #000000bd;
+  font-size: 25px;
+}
+.cartproduct tr td:nth-child(1) p {
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+
+.updatecart button {
+  border: none;
+  background: rgba(75, 92, 241, 0.91);
+  padding: 14px 30px;
+  color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(56, 49, 49, 0.5);
+  outline: none;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .cart h3 {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 13px 25px !important;
+    font-size: 13px !important;
+  }
+}

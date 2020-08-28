@@ -1,0 +1,51 @@
+.account {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.account {
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+  box-shadow: 0px 0px 15px #150a0a4a;
+  background: #fff;
+}
+form > p {
+  position: absolute;
+  top: 65px;
+}
+
+.account .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 50px;
+}
+form > i {
+  position: absolute;
+  top: 18%;
+  left: 30%;
+  border: 1px solid #dc4a4a;
+  background: #e05555;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+.button.form-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(45deg, #086bd6, #7a44daeb);
+}

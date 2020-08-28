@@ -1,0 +1,19 @@
+link( rel="stylesheet" href="../stylesheets/style.css")
+form(method='POST', action='/edit/' + product._id, enctype='multipart/form-data')
+  .formgroup
+    label(for='name') Name: 
+    input#name(type='text', class="form-control" name='name', autocomplete='off' value=product.productName)
+  .formgroup
+    label(for='price') Price: 
+    input#price(type='number', class="form-control" name='price', autocomplete='off' value=product.productPrice)
+  .formgroup
+    label(for='category') Category: 
+    input#category(type='text',  class="form-control" name='category', autocomplete='off' value=product.category)
+  .formgroup
+    label Image: 
+    label.sub-label(for='image')
+      img(src="../images/picture.png")
+      |       Choose a picture
+    input#image(type='file', name='image'  class="form-control-file")
+  .formgroup
+    button Submit

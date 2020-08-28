@@ -1,0 +1,18 @@
+.error {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000000eb;
+  color: #ffffffd1;
+}
+
+.error h3 {
+  font-size: 2em;
+  margin: 20px 0 15px 0px;
+}
+
+.error p {
+  color: #808080eb;
+}

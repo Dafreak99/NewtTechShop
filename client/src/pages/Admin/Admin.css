@@ -1,0 +1,64 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.admintop {
+  position: relative;
+  padding: 35px 60px;
+}
+.search2 {
+  position: absolute;
+  top: 35%;
+  right: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tableheading {
+  margin: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.adminpage .modall button {
+  padding: 10px 35px;
+  background: #384aeb;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 250ms ease-out;
+  border: none;
+  font-size: 18px;
+}
+.tableheading a {
+  color: #384aebad;
+}
+.tableheading tr {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.tableheading tr th,
+.tableheading tr td {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  height: 50px;
+  color: #3e3a3a;
+  font-weight: 600;
+}
+.tableheading tr td {
+  font-weight: 300;
+}
+.firstColumn {
+  grid-column: span 3 !important;
+}
+.secondColumn {
+  grid-column: span 1 !important;
+}
+.tableheading tr a {
+  margin: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
