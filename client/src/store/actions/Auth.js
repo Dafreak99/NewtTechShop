@@ -1,10 +1,11 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import setAuthToken from "../../utils/AuthorizationHeader";
+import { loadCart } from ".";
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
-
+export const LOGIN = "LOGIN";
 export const USER_LOADED = "USER_LOADED";
 export const AUTH_ERROR = "AUTH_ERROR";
 export const LOGOUT = "LOGOUT";
@@ -78,9 +79,9 @@ export const login = (username, password, history) => async (dispatch) => {
 
     toast.success("Login successful");
 
-    // Auth token
+    // Set Auth token
     localStorage.setItem("authToken", respond.data.token);
-
+    dispatch(loadCart());
     dispatch({ type: "LOGIN", payload: respond.data });
     history.push("/");
   } catch (error) {

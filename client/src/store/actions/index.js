@@ -1,5 +1,6 @@
 import axios from "axios";
 export const LOAD_DATA = "LOAD_DATA";
+export const LOAD_CART = "LOAD_CART";
 export const ON_SEARCH = "ON_SEARCH";
 export const LOGOUT = "LOGOUT";
 export const ON_CHANGE_CART_ITEM_QUANTITY = "ON_CHANGE_CART_ITEM_QUANTITY";
@@ -10,21 +11,26 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const REVIEW_MESSAGE = "REVIEW_MESSAGE";
 export const GET_DETAIL_ITEM = "GET_DETAIL_ITEM";
 
-export const loadData = () => (dispatch) => {
-  let requestOne = axios("/products");
-  let requestTwo = axios("/info/cart");
-
+export const loadData = () => async (dispatch) => {
   try {
-    axios.all([requestOne, requestTwo]).then(
-      axios.spread((one, two, three) => {
-        dispatch({
-          type: LOAD_DATA,
-          content: one.data,
-          cart: two.data || [],
-          username: null,
-        });
-      })
-    );
+    let res = await axios("/products");
+
+    dispatch({
+      type: LOAD_DATA,
+      content: res.data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const loadCart = () => async (dispatch) => {
+  try {
+    let res = await axios("/info/cart");
+    dispatch({
+      type: LOAD_CART,
+      cart: res.data,
+    });
   } catch (error) {
     console.log(error);
   }

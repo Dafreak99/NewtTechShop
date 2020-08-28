@@ -16,15 +16,17 @@ class Featureproduct extends Component {
     return (
       <div className={"featureproduct " + bonusClass}>
         <div className="product-section-wrapper">
-          <h3 className="title">{title}</h3>
-          {seemore === true &&
-            (title !== "Lastest Product" ? (
-              <Link className="seemore change-color" to={"/" + bonusClass}>
-                See More
-              </Link>
-            ) : (
-              ""
-            ))}
+          <div className="product-section-heading">
+            <h3 className="title">{title}</h3>
+            {seemore === true &&
+              (title !== "Lastest Product" ? (
+                <Link className="seemore change-color" to={"/" + bonusClass}>
+                  See More
+                </Link>
+              ) : (
+                ""
+              ))}
+          </div>
           <div className="products">
             {content.map((each, i) => (
               <Product product={each} i={i} />

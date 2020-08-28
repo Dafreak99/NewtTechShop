@@ -1,9 +1,9 @@
 import {
   LOAD_DATA,
+  LOAD_CART,
   ON_SEARCH,
   LOGOUT,
   ON_CHANGE_CART_ITEM_QUANTITY,
-  LOGIN,
   ADD_TO_CART,
   REMOVE_FROM_CART,
   GET_DETAIL_ITEM,
@@ -13,7 +13,6 @@ import authReducer from "./Auth";
 const initialState = {
   content: [],
   search: false,
-  username: "",
   cart: [],
   matchedItem: null,
 };
@@ -25,13 +24,15 @@ let reducer = (state = initialState, action) => {
       return {
         ...newState,
         content: action.content,
-        username: action.username,
+      };
+    case LOAD_CART:
+      return {
+        ...newState,
         cart: action.cart,
       };
     case LOGOUT:
       return {
         ...state,
-        username: "",
         cart: [],
       };
     case ON_CHANGE_CART_ITEM_QUANTITY:

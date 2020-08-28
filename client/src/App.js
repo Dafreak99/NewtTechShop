@@ -12,11 +12,9 @@ import {
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { loadData } from "./store/actions/index";
+import { loadData, loadCart } from "./store/actions/index";
 import { connect } from "react-redux";
-import { store } from "./index";
 
-import "react-toastify/dist/ReactToastify.css";
 import setAuthToken from "./utils/AuthorizationHeader";
 
 toast.configure();
@@ -119,13 +117,14 @@ class App extends Component {
 
     this.spinnerAnimation();
     this.props.loadData();
+    this.props.loadCart();
   }
 }
 
 export default withRouter(
   connect(
     null,
-    { loadData }
+    { loadData, loadCart }
   )(App)
 );
 // IF SOME THING WRONG WITH THIS CHECK THE VERSION OF REDUX. recommend 6.00

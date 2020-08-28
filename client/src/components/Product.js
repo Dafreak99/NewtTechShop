@@ -4,6 +4,8 @@ import { render } from "jade";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { addToCart } from "../store/actions";
 
 class Product extends Component {
   render() {
@@ -64,7 +66,7 @@ class Product extends Component {
           toast.success(res.data.message);
         } else {
           addToCart(res.data.item);
-          toast.success(res.data.message);
+          toast.success(res.data.message, { autoClose: 1000 });
         }
       } catch (error) {
         console.log(error);
@@ -78,7 +80,9 @@ const mapStateToProps = (state) => {
     authReducer: state.authReducer,
   };
 };
-export default connect(
-  mapStateToProps,
-  null
-)(Product);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { addToCart }
+  )(Product)
+);

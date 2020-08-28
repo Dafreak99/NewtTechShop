@@ -9,6 +9,9 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+@media only screen and (hover: none) {
+}
 .spinner:before {
   position: absolute;
   content: "";
@@ -796,12 +799,19 @@ div#listgroup {
   background: white;
   border-radius: 3px;
 }
+.product-section-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
 .featureproduct .title {
   font-size: 3em;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   font-weight: 400;
 }
 
@@ -898,9 +908,7 @@ div#listgroup {
   top: 10%;
 }
 a.seemore {
-  position: absolute;
-  right: 9%;
-  top: 20%;
+  align-self: flex-end;
 }
 .products .product img {
   width: 75%;
@@ -1008,9 +1016,7 @@ label.sub-label {
     padding: 0px;
     padding: 15px 0 !important;
   }
-  .products .product {
-    margin: 0;
-  }
+
   .sub-navbar ul {
     display: flex;
     flex-direction: column;
@@ -1103,7 +1109,9 @@ label.sub-label {
   .featureproduct {
     padding: 50px 30px !important;
   }
+
   .products .product {
+    margin: 0;
     grid-column: span 6;
     min-height: 330px;
     max-height: 330px;
