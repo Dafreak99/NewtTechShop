@@ -1,7 +1,8 @@
 let User = require("../models/Users");
-let now = new Date();
 let bcrypt = require("bcryptjs");
 let jwt = require("jsonwebtoken");
+
+let now = new Date();
 
 module.exports = {
   getUser: async (req, res) => {
@@ -66,10 +67,4 @@ module.exports = {
       return res.status(500).send(error.message);
     }
   },
-  // error: (req, res) => {
-  //   res.json({
-  //     error: req.session.error,
-  //     tempUsername: req.session.tempUsername,
-  //   });
-  // },
 };

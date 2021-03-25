@@ -5,16 +5,17 @@ var logger = require("morgan");
 const cors = require("cors");
 const passport = require("passport");
 const session = require("express-session");
-const flash = require("connect-flash");
 var indexRouter = require("./routes/index");
 var userRouter = require("./routes/user");
 const User = require("./models/Users");
 var app = express();
 let mongoose = require("mongoose");
 
-mongoose.connect(
-  "mongodb://seproject:haitran99@ds113815.mlab.com:13815/se-project"
-);
+mongoose
+  .connect(
+    "mongodb+srv://haitran:programmer2211@devconnector.uulq9.mongodb.net/seprojectt?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("MongoDB connected"));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

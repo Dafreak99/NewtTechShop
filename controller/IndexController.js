@@ -1,7 +1,8 @@
+const jwt = require("jsonwebtoken");
+
 const Product = require("../models/Product");
 const Cart = require("../models/Cart");
 const User = require("../models/Users");
-const jwt = require("jsonwebtoken");
 
 module.exports = {
   getProduct: async (req, res) => {
@@ -10,9 +11,6 @@ module.exports = {
     res.send(data.reverse());
   },
   postAdd: async (req, res) => {
-    console.log(req.body);
-    console.log(req.files);
-
     let cleanImgPath = cutRedundancyImagePath(req.files);
     const {
       name,

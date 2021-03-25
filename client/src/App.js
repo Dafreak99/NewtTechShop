@@ -47,6 +47,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 class App extends Component {
   render() {
     let Adminn = () => <Admin />;
+    
     return (
       <div className="App">
         <Suspense fallback={<div class="spinner" />}>

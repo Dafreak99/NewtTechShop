@@ -7,8 +7,6 @@ router.get("/api", controller.getUser);
 
 router.post("/signup", controller.postSignUp);
 
-// router.get("/error", controller.error);
-
 router.post("/signin", controller.postSignIn);
 
 router.get("/info", AuthMiddleware, controller.getUserInfo);

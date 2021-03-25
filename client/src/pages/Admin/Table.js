@@ -14,8 +14,7 @@ class Table extends Component {
 
   render() {
     const { content } = this.props;
-    const { percent } = this.state;
-    console.log(content);
+     
     return (
       <div className="tableheading">
         <tr>
